@@ -1,42 +1,34 @@
-// Declare variable that points to my API keys in the config.js file
-var WeatherApiKey = config.myWeatherApiKey
+/* Start of code related to tabs and sorting of widgets */
 
-// Fetch the weather data from the API
-function fetchWeatherData(cityName, apiKey) {
-  const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".tab");
+  const widgets = document.querySelectorAll(".widget");
 
-  fetch(apiUrl)
-    .then((response) => response.json())
-    .then((data) => displayWeatherData(data))
-    .catch((error) => console.log(error));
-}
+  // Set "All" tab as active and highlighted by default
+  tabs.forEach((tab) => {
+    if (tab.getAttribute("data-category") === "all") {
+      tab.classList.add("active");
+    }
+    tab.addEventListener("click", function () {
+      const category = this.getAttribute("data-category");
 
-// Display the weather data on the web page
-function displayWeatherData(weatherData) {
-  const weatherContainer = document.getElementById("weather-data");
+      // Remove "active" class from all tabs
+      tabs.forEach((tab) => tab.classList.remove("active"));
 
-  // Extract the desired information from the weatherData object
-  const temperature = weatherData.main.temp;
-  const weatherConditions = weatherData.weather[0].description;
+      // Add "active" class to the clicked tab
+      this.classList.add("active");
 
-  // Create HTML elements to display the data
-  const cityElement = document.createElement("h2");
-  cityElement.textContent = `City: ${cityName}`;
+      // Show or hide widgets based on the category
+      widgets.forEach((widget) => {
+        const widgetCategory = widget.getAttribute("data-category");
+        if (category === "all" || category === widgetCategory) {
+          widget.style.display = "block";
+        } else {
+          widget.style.display = "none";
+        }
+      });
+    });
+  });
+});
 
-  const temperatureElement = document.createElement("h3");
-  temperatureElement.textContent = `Temperature: ${temperature}°C`;
-
-  const conditionsElement = document.createElement("p");
-  conditionsElement.textContent = `Weather Conditions: ${weatherConditions}`;
-
-  // Append the elements to the weatherContainer
-  weatherContainer.appendChild(cityElement);
-  weatherContainer.appendChild(temperatureElement);
-  weatherContainer.appendChild(conditionsElement);
-}
-
-// Indicate your actual API key
-const apiKey = WeatherApiKey;
-const cityName = "Bern"; // Replace with the desired city name
-
-fetchWeatherData(cityName, apiKey);
+/* End of code related to tabs and sorting of widgets */

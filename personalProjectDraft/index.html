@@ -1,16 +1,113 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/normalize.css" />
-    <title>Weather Forecast</title>
+    <title>Dashboard with business and education widgets</title>
   </head>
+
   <body>
-    <div id="weather-data"><span id="weather_data_heading">Weather Forecast</span></div>
+    <!-- Display of widgets and sorting by tabs -->
+    <div class="tabs">
+      <button class="tab" data-category="all">All</button>
+      <button class="tab" data-category="business">Business</button>
+      <button class="tab" data-category="education">Education</button>
+    </div>
+
+    <div class="container">
+      <!-- Widget 1 for testing -->
+      <div class="widget" data-category="education">
+        <h2>Education Widget</h2>
+        <p>
+          More widgets will be added. Both educational and business ones.
+        </p>
+        <img src="img/imageWidget1.jpg" alt="Widget 1 Image" />
+      </div>
+
+      <!-- Weather forecast widget -->
+      <div id="weather-data" class="widget" data-category="business">
+        <h2>Weather Forecast</h2>
+      </div>
+
+      <!-- Google translation widget -->
+      <div class="widget widgetGoogleDictionary" data-category="education">
+        <h2>Google Translation</h2>
+        <textarea
+          id="input-text"
+          class="inputTextAreaGoogleTranslation"
+          placeholder="Enter text to translate"
+        ></textarea>
+        <button class="buttonGoogleTranslation" id="translate-button">
+          Translate
+        </button>
+        <textarea
+          id="translation-result"
+          placeholder="Translated text will be here"
+        ></textarea>
+      </div>
+
+      <!-- ChatGPT bot widget -->
+      <div class="widget widgetChatGPT" data-category="education">
+        <h2>ChatGPT bot</h2>
+        <input type="text" id="queryInput" placeholder="Enter your query..." />
+        <button class="chatGptSendButton" id="sendButton">Send Request</button>
+        <p>Response:</p>
+        <div id="responseFieldChatGPTBot">
+          <div id="responseOutput"></div>
+        </div>
+      </div>
+
+      <!-- Article summarizer widget -->
+      <div class="widget widgetArticleSummarizer" data-category="business">
+        <h2>Article Summarizer</h2>
+        <div id="firstBlockArticleSummarizer">
+          <label class="label" for="articleURL">Article URL:</label>
+          <input
+            class="input-field"
+            type="text"
+            id="article-url"
+            placeholder="Enter the URL of the article"
+          />
+          <label class="language-label" for="language">Select Language:</label>
+          <select class="language-dropdown" id="language">
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="fr">French</option>
+            <option value="ru">Russian</option>
+            <!-- Add more language options if needed -->
+          </select>
+        </div>
+        <button class="buttonArticleSummarizer" id="summarize-btn">
+          Summarize Article
+        </button>
+        <p id="articleSummaryLabel">Article Summary:</p>
+        <div id="secondBlockArticleSummarizer">
+          <p
+            class="articleSummary"
+            id="articleSummary"
+            placeholder="Article summary will be here"
+          ></p>
+        </div>
+      </div>
+      <!-- Repeat the widget code for the remaining widgets -->
+    </div>
+
+    <!-- js file to store API keys -->
     <script type="text/javascript" src="config.js"></script>
+    <!-- Main js file for general purposes -->
     <script src="script.js"></script>
+    <!-- js file for Weather forecast widget -->
+    <script src="scriptWidgets/weatherForecast.js"></script>
+    <!-- js file for Google translation widget -->
+    <script src="scriptWidgets/googleTranslation.js"></script>
+    <!-- js files for Chat GPT bot widget -->
+    <script src="scriptWidgets/chatGptBot.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- js file for Article summarizer widget -->
+    <script src="scriptWidgets/articleSummarizer.js"></script>
   </body>
 </html>
 

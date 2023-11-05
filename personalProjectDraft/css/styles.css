@@ -1,33 +1,202 @@
-/* Start of weather widget related css */
+/* Start of general CSS */
 
-#weather-data {
-    background-color: rgb(255, 255, 166);
-    border-style: 5px solid rgb(142, 15, 15);
-    border-radius: 10px;
+body {
     font-family: Arial, sans-serif;
-    margin: auto;
-    margin-top: 3rem;
-    padding: 50px;
-    width: 50%;
+    background-color: grey;
+    padding: 20px;
 }
 
-#weather_data_heading {
-    font-weight: 800;
-    color: green;
+.container {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
 }
 
-#weather-data h2 {
-    color: red;
-    margin: 10px 0;
+.widget {
+    background-color: lightblue;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px lightgrey;
+    flex: 1 0 25%; /* Each widget takes 25% of the container width */
+    padding: 20px;
+    margin: 10px;
+    max-width: 400px;
+    text-align: center;
 }
 
-#weather-data h3 {
-    color: blue;
-    margin: 10px 0;
+/* End of general CSS */
+
+/* Start of CSS related to tabs */
+
+.tabs {
+    text-align: center;
 }
+
+.tab {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: lightgrey;
+    border: 1px solid white;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: -1px;
+    margin-right: 5px;
+    width: 150px;
+}
+
+@media screen and (max-width: 550px) {
+    .tab {
+        width: 100px;
+        font-size: 12px;
+    }
+}
+
+.tab.active {
+    background-color: white;
+}
+
+/* End of CSS related to tabs */
+
+/* Start of CSS for Widget 1 */
+
+.widget img {
+    object-fit: contain;
+    width: 100%;
+}
+
+/* End of CSS for Widget 1 */
+
+/* Start of CSS related to weather widget */
 
 #weather-data p {
     margin: 10px 0;
 }
 
-/* End of weather widget related css */
+h3 {
+    font-size: 42px;
+}
+
+/* End of CSS related to weather widget */
+
+/* Start of CSS related to Google Translation widget */
+
+.inputTextAreaGoogleTranslation {
+    border-radius: 4px;
+    height: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.buttonGoogleTranslation {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#translation-result {
+    background-color: white;
+    border-radius: 4px;
+    margin-top: 13px;
+    text-align: center;
+    width: 100%;
+}
+
+/* End of CSS related to Google Translation widget */
+
+/* Start of CSS related to ChatGPT bot widget */
+
+#queryInput {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 90%;
+}
+
+.chatGptSendButton {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#responseFieldChatGPTBot {
+    display: flex;
+    justify-content: center;
+}
+
+#responseOutput {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-top: 0;
+    padding: 10px;
+    text-align: center;
+    width: 80%;
+}
+
+/* End of CSS related to ChatGPT bot widget */
+
+/* Start of CSS related to article summarizer widget */
+
+#firstBlockArticleSummarizer {
+    /* border: 1px solid red; */
+}
+
+.label {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 92%;
+}
+
+.language-label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.language-dropdown {
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 8px;
+    width: 80%;
+}
+
+.buttonArticleSummarizer {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#secondBlockArticleSummarizer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#articleSummaryLabel {
+    margin-bottom: 0;
+}
+
+.articleSummary {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 80%;
+}
+
+/* Start of CSS related to article summarizer widget */
