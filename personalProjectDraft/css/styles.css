@@ -19,7 +19,8 @@ body {
     background-color: lightblue;
     border-radius: 10px;
     box-shadow: 10px 10px 5px lightgrey;
-    flex: 1 0 25%; /* Each widget takes 25% of the container width */
+    flex: 1 0 25%;
+    /* Each widget takes 25% of the container width */
     padding: 20px;
     margin: 10px;
     max-width: 400px;
