@@ -16,6 +16,7 @@
     <button class="tab" data-category="all">All</button>
     <button class="tab" data-category="business">Business</button>
     <button class="tab" data-category="education">Education</button>
+    <button class="tab" data-category="fun">Fun</button>
   </div>
 
   <div class="container">
@@ -66,8 +67,10 @@
     <div class="widget widgetArticleSummarizer" data-category="business">
       <h2>Article Summarizer</h2>
       <div id="firstBlockArticleSummarizer">
+        
         <label class="label" for="articleURL">Article URL:</label>
         <input class="input-field" type="text" id="article-url" placeholder="Enter the URL of the article" />
+
         <label class="language-label" for="language">Select Language:</label>
         <select class="language-dropdown" id="language">
           <option value="en">English</option>
@@ -85,6 +88,25 @@
         <p class="articleSummary" id="articleSummary" placeholder="Article summary will be here"></p>
       </div>
     </div>
+
+    <!-- Video Recipe Widget -->
+    <div class="widget recipeInputs" id="recipe-widget-container" data-category="fun">
+        <h2>Video Recipe Widget</h2>
+
+        <label class="recipeNameClass" for="recipeName">What do you want to cook?</label>
+        <input type="text" id="recipeName" placeholder="chicken soup, pasta, stew, etc." required>
+
+        <label class="includeIngredients" for="inclIngredients">Include ingredients (optional):</label>
+        <input type="text" id="inclIngredients" placeholder="meat, rice, tomatoes, etc.">
+
+        <label class="excludeIngredients" for="exclIngredients">Exclude ingredients (optional):</label>
+        <input type="text" id="exclIngredients" placeholder="pork, mushrooms, nuts, etc.">
+
+        <button id="buttonVideoRecipeSearch">Find recipes</button>
+
+      <!-- Widget content is dynamically loaded here -->
+    </div>
+
     <!-- Repeat the widget code for the remaining widgets -->
   </div>
 
@@ -100,9 +122,12 @@
   <script src="scriptWidgets/googleTranslation.js"></script>
   <!-- js files for Chat GPT bot widget -->
   <script src="scriptWidgets/chatGptBot.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- js file for Article summarizer widget -->
   <script src="scriptWidgets/articleSummarizer.js"></script>
+  <!-- js file for Video recipe widget -->
+  <script src="script.js"></script>
+  <!-- jquery link for widgets: Chat GPT bot, Video recipes -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>
