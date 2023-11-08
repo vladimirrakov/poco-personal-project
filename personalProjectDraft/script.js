@@ -1,3 +1,16 @@
+/* THIS JS FILE CONTAINS CODE FOR GENERAL FEATURES, SUCH AS:
+- Welcome message for main page after user authentication
+- Tabs and sorting of widgets
+*/ 
+
+/* Start of code for welcome message for main page 
+after user authentication. First it retrieves a welcome message 
+from the session and then displays it on the main page. */
+var welcomeMessage = sessionStorage.getItem('welcomeMessage');
+document.getElementById("welcome-message").textContent = welcomeMessage;
+
+/* End of code for welcome message for main page after user authentication */
+
 /* Start of code related to tabs and sorting of widgets */
 
 document.addEventListener("DOMContentLoaded", function () {

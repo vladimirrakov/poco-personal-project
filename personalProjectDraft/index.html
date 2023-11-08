@@ -1,135 +1,30 @@
-<!DOCTYPE html>
+<!--
+IMPORTANT NOTE!
+This is a basic example and should not be used 
+as a complete and secure authentication system. 
+It's important to implement proper security measures 
+and consider server-side authentication and validation 
+to ensure the security of user data.
+-->
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/normalize.css" />
-  <title>Dashboard with business, education and fun widgets</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication Page - Dashboard with business, education and fun widgets </title>
 </head>
 
 <body>
-  <!-- Display of widgets and sorting by tabs -->
-  <div class="tabs">
-    <button class="tab" data-category="all">All</button>
-    <button class="tab" data-category="business">Business</button>
-    <button class="tab" data-category="education">Education</button>
-    <button class="tab" data-category="fun">Fun</button>
-  </div>
-
-  <div class="container">
-    <!-- Widget 1 for testing -->
-    <div class="widget" data-category="education">
-      <h2>Education Widget</h2>
-      <p>
-        More widgets will be added. Both educational and business ones.
-      </p>
-      <img src="img/imageWidget1.jpg" alt="Widget 1 Image" />
-    </div>
-
-    <!-- Weather forecast widget -->
-    <div id="weather-data" class="widget" data-category="business">
-      <h2>Weather Forecast</h2>
-    </div>
-
-    <!-- Exchange rate widget -->
-    <div class="widget" id="widget-container" data-category="business">
-      <h2>Exchange Rates</h2>
-      <h3>to 1 CHF</h3>
-      <div id="resultExchangeRates"></div>
-    </div>
-
-    <!-- Google translation widget -->
-    <div class="widget widgetGoogleDictionary" data-category="education">
-      <h2>Google Translation</h2>
-      <p>Translate any text from any language to German</p>
-      <textarea id="input-text" class="inputTextAreaGoogleTranslation" placeholder="Enter text to translate"></textarea>
-      <button class="buttonGoogleTranslation" id="translate-button">
-        Translate
-      </button>
-      <textarea id="translation-result" placeholder="Translated text will be here"></textarea>
-    </div>
-
-    <!-- ChatGPT bot widget -->
-    <div class="widget widgetChatGPT" data-category="education">
-      <h2>ChatGPT bot</h2>
-      <input type="text" id="queryInput" placeholder="Enter your query..." />
-      <button class="chatGptSendButton" id="sendButton">Send Request</button>
-      <p>Response:</p>
-      <div id="responseFieldChatGPTBot">
-        <div id="responseOutput"></div>
-      </div>
-    </div>
-
-    <!-- Article summarizer widget -->
-    <div class="widget widgetArticleSummarizer" data-category="business">
-      <h2>Article Summarizer</h2>
-      <div id="firstBlockArticleSummarizer">
-        
-        <label class="label" for="articleURL">Article URL:</label>
-        <input class="input-field" type="text" id="article-url" placeholder="Enter the URL of the article" />
-
-        <label class="language-label" for="language">Select Language:</label>
-        <select class="language-dropdown" id="language">
-          <option value="en">English</option>
-          <option value="de">German</option>
-          <option value="fr">French</option>
-          <option value="ru">Russian</option>
-          <!-- Add more language options if needed -->
-        </select>
-      </div>
-      <button class="buttonArticleSummarizer" id="summarize-btn">
-        Summarize Article
-      </button>
-      <p id="articleSummaryLabel">Article Summary:</p>
-      <div id="secondBlockArticleSummarizer">
-        <p class="articleSummary" id="articleSummary" placeholder="Article summary will be here"></p>
-      </div>
-    </div>
-
-    <!-- Video Recipe Widget -->
-    <div class="widget recipeInputs" id="recipe-widget-container" data-category="fun">
-        <h2>Video Recipe Widget</h2>
-
-        <label class="recipeNameClass" for="recipeName">What do you want to cook?</label>
-        <input type="text" id="recipeName" placeholder="chicken soup, pasta, stew, etc." required>
-
-        <label class="includeIngredients" for="inclIngredients">Include ingredients (optional):</label>
-        <input type="text" id="inclIngredients" placeholder="meat, rice, tomatoes, etc.">
-
-        <label class="excludeIngredients" for="exclIngredients">Exclude ingredients (optional):</label>
-        <input type="text" id="exclIngredients" placeholder="pork, mushrooms, nuts, etc.">
-
-        <button id="buttonVideoRecipeSearch">Find recipes</button>
-
-      <!-- Widget content is dynamically loaded here -->
-    </div>
-
-    <!-- Repeat the widget code for the remaining widgets -->
-  </div>
-
-  <!-- js file to store API keys -->
-  <script type="text/javascript" src="config.js"></script>
-  <!-- Main js file for general purposes -->
-  <script src="script.js"></script>
-  <!-- js file for Weather forecast widget -->
-  <script src="scriptWidgets/weatherForecast.js"></script>
-  <!-- js file for Exchange rates of CHF -->
-  <script src="scriptWidgets/exchangeRates.js"></script>
-  <!-- js file for Google translation widget -->
-  <script src="scriptWidgets/googleTranslation.js"></script>
-  <!-- js files for Chat GPT bot widget -->
-  <script src="scriptWidgets/chatGptBot.js"></script>
-  <!-- js file for Article summarizer widget -->
-  <script src="scriptWidgets/articleSummarizer.js"></script>
-  <!-- js file for Video recipe widget -->
-  <script src="script.js"></script>
-  <!-- jquery link for widgets: Chat GPT bot, Video recipes -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <h1>User Authentication</h1>
+    <p>The user to be authenticated: hbingley1@plala.or.jp, CQutx25i8r</p>
+    <form action="index.html">
+        <label for="email">Your e-mail address:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="pwd">Your password:</label>
+        <input type="password" id="pwd" required>
+        <button>Log-in</button>
+    </form>
+    <script src="scriptOthers/userAuthentication.js"></script>
 </body>
-
-</html>
-
-<form action=""></form>
