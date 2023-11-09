@@ -6,6 +6,7 @@
 /* Start of code for welcome message for main page 
 after user authentication. First it retrieves a welcome message 
 from the session and then displays it on the main page. */
+
 var welcomeMessage = sessionStorage.getItem('welcomeMessage');
 document.getElementById("welcome-message").textContent = welcomeMessage;
 

@@ -1,0 +1,25 @@
+/* Styles for the user authentication page: index.html */
+
+body {
+    background-color: lightgrey;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.authenticationWindow {
+    background-color: #264653;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px darkgrey;
+    color: lightgrey;
+    padding: 20px;
+    margin: 10px;
+    max-width: 400px;
+    text-align: center;
+}
+
+p {
+    color: yellow;
+}

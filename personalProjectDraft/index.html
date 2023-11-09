@@ -13,18 +13,24 @@ to ensure the security of user data.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylesIndexPage.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
     <title>User Authentication Page - Dashboard with business, education and fun widgets </title>
 </head>
 
 <body>
-    <h1>User Authentication</h1>
-    <p>The user to be authenticated: hbingley1@plala.or.jp, CQutx25i8r</p>
-    <form action="index.html">
-        <label for="email">Your e-mail address:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="pwd">Your password:</label>
-        <input type="password" id="pwd" required>
-        <button>Log-in</button>
-    </form>
+    <div class="authenticationWindow">
+        <h1>User Authentication</h1>
+        <p>The user to be authenticated:</p>
+        <p>hbingley1@plala.or.jp, CQutx25i8r</p>
+        <form action="index.html">
+            <label for="email">Your e-mail address:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="pwd">Your password:</label><br>
+            <input type="password" id="pwd" required><br>
+            <button>Log-in</button>
+        </form>
+    </div>
+
     <script src="scriptOthers/userAuthentication.js"></script>
 </body>

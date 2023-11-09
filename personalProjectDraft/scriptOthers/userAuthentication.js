@@ -49,12 +49,12 @@ formTag.addEventListener("submit", async (e) => {
 });
 
 function showWelcomeMessage(fname) {
-  h1Tag.innerText = `Welcome, ${fname}`;
+  // h1Tag.innerText = `Welcome, ${fname}`;
   formTag.style.display = "none";
   /* The welcome message is stored in the session. 
-      Then, on the main page (main.html), the JS code retrieves 
-      the welcome message from the session and displays it */
-  var welcomeMessage = `Welcome, ${fname}`;
+  Then, on the main page (main.html), the JS code retrieves 
+  the welcome message from the session and displays it */
+  var welcomeMessage = `Welcome, ${fname}!`;
   sessionStorage.setItem("welcomeMessage", welcomeMessage);
   window.location.href = "main.html";
   return;
