@@ -11,23 +11,22 @@
 </head>
 
 <body>
-  <!-- Welcome message is displayed here 
-    after user authentication. See scipt.js file -->
-  <p id="welcome-message"></p>
   <!-- Display of widgets and sorting by tabs -->
   <div class="tabs">
-    <button class="tab" data-category="all">All</button>
-    <button class="tab" data-category="business">Business</button>
-    <button class="tab" data-category="education">Education</button>
-    <button class="tab" data-category="fun">Fun</button>
+    <button class="tab tabAll" data-category="all">All</button>
+    <button class="tab tabBusiness" data-category="business">Business</button>
+    <button class="tab tabEducation" data-category="education">Education</button>
+    <button class="tab tabFun" data-category="fun">Fun</button>
   </div>
 
   <div class="container">
-    <!-- Widget 1 for testing -->
-    <div class="widget" data-category="education">
-      <h2>Education Widget</h2>
+    <!-- Widget for user profile information and welcome message -->
+    <div class="widget userProfileWidget" data-category="all">
+      <!-- Welcome message is displayed with user's name here 
+      after the user authentication. See scipt.js file -->
+      <h2 id="welcome-message"></h2>
       <p>
-        More widgets will be added. Both educational and business ones.
+        This is your dashboard with favorite widgets divided by groups. Switch tabs to see them
       </p>
       <img src="img/imageWidget1.jpg" alt="Widget 1 Image" />
     </div>
