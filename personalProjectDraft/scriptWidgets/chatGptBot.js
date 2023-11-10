@@ -1,3 +1,6 @@
+// Fetch my API key from the config.js file
+import { myChatGptBotAPIKey } from "./config.js";
+
 const settings = {
   async: true,
   crossDomain: true,
@@ -5,7 +8,7 @@ const settings = {
   method: "POST",
   headers: {
     "content-type": "application/json",
-    "X-RapidAPI-Key": "eab87c10cbmshc11c213cc0ca506p12eccajsnaa5165a2b052",
+    "X-RapidAPI-Key": myChatGptBotAPIKey,
     "X-RapidAPI-Host": "chatgpt-ai-chat-bot.p.rapidapi.com",
   },
   processData: false,

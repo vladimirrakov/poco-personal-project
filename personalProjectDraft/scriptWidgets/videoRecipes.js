@@ -1,3 +1,7 @@
+// Fetch my API key from the config.js file
+import { myVideoRecipesAPIKey } from "./config.js";
+console.log(myVideoRecipesAPIKey);
+
 document
   .getElementById("buttonVideoRecipeSearch")
   .addEventListener("click", function () {
@@ -15,7 +19,7 @@ document
       url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/videos/search?query=${recipeName}&minLength=0&maxLength=999&number=3&includeingredients=${ingredientsToInclude}&excludeingredients=${ingredientsToExclude}&offset=0`,
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "eab87c10cbmshc11c213cc0ca506p12eccajsnaa5165a2b052",
+        "X-RapidAPI-Key": myVideoRecipesAPIKey,
         "X-RapidAPI-Host":
           "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
       },

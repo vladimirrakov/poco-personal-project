@@ -1,3 +1,6 @@
+// Fetch my API key from the config.js file
+import { myArticleSummarizerAPIKey } from "./config.js";
+
 document.getElementById("summarize-btn").addEventListener("click", function () {
   const articleUrl = document.getElementById("article-url").value;
   const language = document.getElementById("language").value;
@@ -10,7 +13,7 @@ document.getElementById("summarize-btn").addEventListener("click", function () {
     )}&length=3&lang=${language}`,
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "eab87c10cbmshc11c213cc0ca506p12eccajsnaa5165a2b052",
+      "X-RapidAPI-Key": myArticleSummarizerAPIKey,
       "X-RapidAPI-Host": "article-extractor-and-summarizer.p.rapidapi.com",
     },
   };

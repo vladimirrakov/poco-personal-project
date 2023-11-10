@@ -1,9 +1,9 @@
-// Indicate my API keys in the config.js file
-const apiKey = config.myWeatherApiKey;
+// Fetch my API key from the config.js file
+import { myWeatherAPIKey } from "./config.js";
 
 // Fetch the weather data & pass it to the function to be displayed
 function fetchWeatherData(cityName, apiKey) {
-  const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+  // const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${myWeatherAPIKey}&units=metric`;
 
   fetch(apiUrl)
     .then((response) => response.json())
@@ -40,4 +40,4 @@ function displayWeatherData(weatherData) {
 const cityName = "Bern"; // Replace with the desired city name
 
 // Call the function to fetch weather data
-fetchWeatherData(cityName, apiKey);
+fetchWeatherData(cityName, myWeatherAPIKey);

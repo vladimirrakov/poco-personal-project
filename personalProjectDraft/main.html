@@ -38,7 +38,7 @@
     <!-- Exchange rate widget -->
     <div class="widget" id="widget-container" data-category="business">
       <h2>Exchange Rates</h2>
-      <h3>to 1 CHF</h3>
+      <h3>to 1 EUR</h3>
       <div id="resultExchangeRates"></div>
     </div>
 
@@ -90,7 +90,7 @@
       </div>
     </div>
 
-    <!-- Video Recipe Widget -->
+    <!-- Video Recipe Widget 1 -->
     <div class="widget recipeInputs" id="recipe-widget-container" data-category="fun">
       <h2>Video Recipe Widget</h2>
 
@@ -108,27 +108,63 @@
       <!-- Widget content is dynamically loaded here -->
     </div>
 
-    <!-- Repeat the widget code for the remaining widgets -->
+    <!-- Video Recipe Widget 2 -->
+    <div class="widget recipeInputs" id="recipe-widget-container-2" data-category="fun">
+      <h1>Recipe Search</h1>
+      <form id="recipeForm">
+        <label for="query">Query:</label>
+        <input type="text" id="query" name="query" required>
+        <label for="includeIngredients">Include Ingredients:</label>
+        <input type="text" id="includeIngredients" name="includeIngredients">
+        <label for="excludeIngredients">Exclude Ingredients:</label>
+        <input type="text" id="excludeIngredients" name="excludeIngredients">
+        <input type="submit" value="Search">
+      </form>
+
+      <div id="results"></div>
+    </div>
+
+
   </div>
 
   <!-- Main js file for general purposes -->
   <script src="script.js"></script>
+  <script type="module" src="./scriptWidgets/config.js"></script>
+
   <!-- js file to store API keys -->
-  <script src="config.js"></script>
+  <script src="./scriptWidgets/config.js"></script>
+
   <!-- js file for user authentication -->
-  <script src="scriptOthers/userAuthentication.js"></script>
+  <script src="./scriptOthers/userAuthentication.js"></script>
+
   <!-- js file for Weather forecast widget -->
-  <script src="scriptWidgets/weatherForecast.js"></script>
+  <script type="module" src="./scriptWidgets/weatherForecast.js"></script>
+  <script src="./scriptWidgets/weatherForecast.js"></script>
+
   <!-- js file for Exchange rates of CHF -->
-  <script src="scriptWidgets/exchangeRates.js"></script>
+  <script type="module" src="./scriptWidgets/exchangeRates.js"></script>
+  <script src="./scriptWidgets/exchangeRates.js"></script>
+
   <!-- js file for Google translation widget -->
-  <script src="scriptWidgets/googleTranslation.js"></script>
+  <script type="module" src="./scriptWidgets/googleTranslation.js"></script>
+  <script src="./scriptWidgets/googleTranslation.js"></script>
+
   <!-- js files for Chat GPT bot widget -->
-  <script src="scriptWidgets/chatGptBot.js"></script>
+  <script type="module" src="./scriptWidgets/chatGptBot.js"></script>
+  <script src="./scriptWidgets/chatGptBot.js"></script>
+
   <!-- js file for Article summarizer widget -->
-  <script src="scriptWidgets/articleSummarizer.js"></script>
-  <!-- js file for Video recipe widget -->
-  <script src="script.js"></script>
+  <script type="module" src="./scriptWidgets/articleSummarizer.js"></script>
+  <script src="./scriptWidgets/articleSummarizer.js"></script>
+
+  <!-- js file for Video recipe widget 1 -->
+  <script type="module" src="./scriptWidgets/videoRecipes.js"></script>
+  <script src="./scriptWidgets/videoRecipes.js"></script>
+
+  <!-- js file for Video recipe widget 2 -->
+  <script type="module" src="./scriptWidgets/videoRecipes2.js"></script>
+  <script src="./scriptWidgets/videoRecipes2.js"></script>
+
   <!-- jquery link for widgets: Chat GPT bot, Video recipes -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
