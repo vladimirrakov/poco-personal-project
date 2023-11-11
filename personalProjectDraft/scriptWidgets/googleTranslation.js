@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const settings = {
       async: true,
       crossDomain: true,
-      // url: "https://google-translate113.p.rapidapi.com/api/v1/translator/text",
+      url: "https://google-translate113.p.rapidapi.com/api/v1/translator/text",
       method: "POST",
       headers: {
         "content-type": "application/x-www-form-urlencoded",

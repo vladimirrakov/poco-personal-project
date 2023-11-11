@@ -2,7 +2,7 @@
 import { myExchangeRateAPIKey } from "./config.js";
 
 const url =
-  // "https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest?from=EUR&to=CHF%2CUSD%2CUAH";
+  "https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest?from=EUR&to=CHF%2CUSD%2CUAH";
   
 const options = {
   method: "GET",

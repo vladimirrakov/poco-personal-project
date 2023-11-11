@@ -3,7 +3,7 @@ import { myWeatherAPIKey } from "./config.js";
 
 // Fetch the weather data & pass it to the function to be displayed
 function fetchWeatherData(cityName, apiKey) {
-  // const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${myWeatherAPIKey}&units=metric`;
+  const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${myWeatherAPIKey}&units=metric`;
 
   fetch(apiUrl)
     .then((response) => response.json())
