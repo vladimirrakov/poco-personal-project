@@ -1,3 +1,6 @@
+// Fetch my API key from the config.js file
+import { myVideoRecipesAPIKey } from "./config.js";
+
 document
   .getElementById("recipeForm")
   .addEventListener("submit", async function (event) {
@@ -18,7 +21,7 @@ document
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "eab87c10cbmshc11c213cc0ca506p12eccajsnaa5165a2b052",
+        "X-RapidAPI-Key": myVideoRecipesAPIKey,
         "X-RapidAPI-Host":
           "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
       },
