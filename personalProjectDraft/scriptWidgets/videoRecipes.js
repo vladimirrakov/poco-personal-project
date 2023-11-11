@@ -1,54 +1,82 @@
-// Fetch my API key from the config.js file
-import { myVideoRecipesAPIKey } from "./config.js";
-console.log(myVideoRecipesAPIKey);
-
 document
-  .getElementById("buttonVideoRecipeSearch")
-  .addEventListener("click", function () {
-    // $(document).ready(function () {
+  .getElementById("recipeForm")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-    const recipeName = document.getElementById("recipeName").value;
-    const ingredientsToInclude =
-      document.getElementById("inclIngredients").value;
-    const ingredientsToExclude =
-      document.getElementById("exclIngredients").value;
+    const query = document.getElementById("query").value;
+    const includeIngredients =
+      document.getElementById("includeIngredients").value;
+    const excludeIngredients =
+      document.getElementById("excludeIngredients").value;
 
-    const settings = {
-      async: true,
-      crossDomain: true,
-      url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/videos/search?query=${recipeName}&minLength=0&maxLength=999&number=3&includeingredients=${ingredientsToInclude}&excludeingredients=${ingredientsToExclude}&offset=0`,
+    const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/videos/search?query=${encodeURIComponent(
+      query
+    )}&minLength=0&maxLength=999&number=5&includeingredients=${encodeURIComponent(
+      includeIngredients
+    )}&excludeingredients=${encodeURIComponent(excludeIngredients)}&offset=0`;
+
+    const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": myVideoRecipesAPIKey,
+        "X-RapidAPI-Key": "eab87c10cbmshc11c213cc0ca506p12eccajsnaa5165a2b052",
         "X-RapidAPI-Host":
           "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
       },
     };
 
-    $.ajax(settings).done(function (response) {
-      // Process the response and display the widget content
-      const widgetContainer = document.getElementById(
-        "recipe-widget-container"
-      );
+    try {
+      const response = await fetch(url, options);
+      const result = await response.json();
 
-      response.videos.forEach(function (video) {
-        // Create elements to display the video thumbnail and title
-        const thumbnail = document.createElement("img");
-        thumbnail.classList.add("video-thumbnail-img");
-        thumbnail.src = video.thumbnail;
-        thumbnail.alt = video.title;
+      // Create the widget container
+      const resultsContainer = document.getElementById("results");
+      resultsContainer.innerHTML = "";
 
+      result.videos.forEach((video) => {
+        // 1. Create a container to display a single recipe
+        const recipeDiv = document.createElement("div");
+        recipeDiv.classList.add("recipe");
+
+        // 2. Create an image element for a video thumbnail
+        const image = document.createElement("img");
+        image.src = video.thumbnail;
+        image.alt = video.title;
+        recipeDiv.appendChild(image);
+
+        // 3. Create an h3 element to display a video title
         const title = document.createElement("h3");
         title.textContent = video.title;
+        recipeDiv.appendChild(title);
 
-        // Create a container for each video
-        const videoContainer = document.createElement("div");
-        videoContainer.classList.add("video-container");
-        videoContainer.appendChild(thumbnail);
-        videoContainer.appendChild(title);
+        // 4. Create an a element to display a link to a video on YouTube
+        const link = document.createElement("a");
+        link.href = `https://www.youtube.com/watch?v=${video.youTubeId}`;
+        link.textContent = "Watch on YouTube";
+        link.target = "_blank";
+        recipeDiv.appendChild(link);
 
-        // Append the video container to the widget container
-        widgetContainer.appendChild(videoContainer);
+        // Finish!  Append the recipe container to the widget container
+        resultsContainer.appendChild(recipeDiv);
       });
-    });
+    } catch (error) {
+      console.error(error);
+    }
   });
+
+// // Reload results when a new query is made
+// const queryInput = document.getElementById("query");
+// const includeIngredientsInput = document.getElementById("includeIngredients");
+// const excludeIngredientsInput = document.getElementById("excludeIngredients");
+
+// function reloadResults() {
+//   queryInput.value = "";
+//   includeIngredientsInput.value = "";
+//   excludeIngredientsInput.value = "";
+
+//   const resultsContainer = document.getElementById("results");
+//   resultsContainer.innerHTML = "";
+// }
+
+// queryInput.addEventListener("input", reloadResults);
+// includeIngredientsInput.addEventListener("input", reloadResults);
+// excludeIngredientsInput.addEventListener("input", reloadResults);

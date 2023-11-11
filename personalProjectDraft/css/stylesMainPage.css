@@ -266,52 +266,7 @@ h3 {
 
 /* End of CSS related to article summarizer widget */
 
-/* Start of CSS for Video recipe widget 1 */
-
-.recipeInputs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#recipeName,
-#inclIngredients,
-#exclIngredients {
-    border-radius: 4px;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 90%;
-}
-
-#buttonVideoRecipeSearch {
-    cursor: pointer;
-    padding: 10px 20px;
-}
-
-.video-container {
-    border: 3px solid green;
-    padding: 10px;
-    text-align: center;
-    width: 300px;
-}
-
-.video-thumbnail-img {
-    width: 100%;
-    height: 200px;
-    /* Set a fixed height for the thumbnails */
-    object-fit: cover;
-    /* Maintain aspect ratio and fill the container */
-}
-
-.video-container h3 {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #333;
-}
-
-/* End of CSS for Video recipe widget 1 */
-
-/* Start of CSS for Video recipe widget 2 */
+/* Start of CSS for Video recipe widget */
 
 form {
     display: flex;
@@ -348,18 +303,20 @@ input[type="submit"]:hover {
 }
 
 .recipe {
-    border: 1px solid #ccc;
+    border: 1px solid #2646533e;
+    border-radius: 4px;
     padding: 10px;
 }
 
 .recipe img {
     width: 100%;
-    height: 250px;
+    height: 210px;
     object-fit: cover;
     /* Maintain aspect ratio and fill the container */
 }
 
 .recipe h3 {
+    font-size: 16px;
     margin-top: 10px;
     margin-bottom: 5px;
 }
@@ -372,7 +329,6 @@ input[type="submit"]:hover {
     display: block;
     margin-top: 10px;
     text-decoration: none;
-    color: #4CAF50;
 }
 
-/* End of CSS for Video recipe widget 2 */
+/* End of CSS for Video recipe widget */
